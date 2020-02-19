@@ -10,7 +10,7 @@ class headerLogin extends StatelessWidget {
           height: 180,
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/images/dentista.jpg"),
+                image: AssetImage("assets/images/logo_header2.jpg"),
                 fit: BoxFit.cover,
             ),
             color: Theme.of(context).primaryColor,

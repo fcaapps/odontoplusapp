@@ -89,7 +89,7 @@ class _menuDrawerState extends State<menuDrawer> {
                 )),
             ListTile(
                 onTap: () {
-
+                  Navigator.popAndPushNamed(context,'/agendar');
                 },
                 leading: Image.asset(
                   "assets/icons/calendar_drawer.png",
@@ -106,7 +106,7 @@ class _menuDrawerState extends State<menuDrawer> {
                 )),
             ListTile(
                 onTap: () {
-
+                  Navigator.popAndPushNamed(context,'/historico');
                 },
                 leading: Image.asset(
                   "assets/icons/historico.png",
@@ -123,7 +123,7 @@ class _menuDrawerState extends State<menuDrawer> {
                 )),
             ListTile(
                 onTap: () {
-
+                  Navigator.popAndPushNamed(context,'/dados');
                 },
                 leading: Image.asset(
                   "assets/icons/dados.png",
@@ -140,7 +140,7 @@ class _menuDrawerState extends State<menuDrawer> {
                 )),
             ListTile(
                 onTap: () {
-
+                  Navigator.popAndPushNamed(context,'/convenios');
                 },
                 leading: Image.asset(
                   "assets/icons/convenios.png",
@@ -157,7 +157,7 @@ class _menuDrawerState extends State<menuDrawer> {
                 )),
             ListTile(
                 onTap: () {
-
+                  Navigator.popAndPushNamed(context,'/configs');
                 },
                 leading: Image.asset(
                   "assets/icons/config_drawer.png",

@@ -10,7 +10,7 @@ class _ListaOdontoPlusServicosState extends State<ListaOdontoPlusServicos> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 700,
+      height: 1700,
       width: double.infinity,
       decoration: BoxDecoration(
           color: Theme.of(context).backgroundColor,
@@ -18,7 +18,7 @@ class _ListaOdontoPlusServicosState extends State<ListaOdontoPlusServicos> {
               topLeft: Radius.circular(60), topRight: Radius.circular(60))),
       child: Padding(
         padding: const EdgeInsets.only(left: 10, right: 10),
-        child: ListView(
+        child: Column(
           children: <Widget>[
             Container(
               width: double.infinity,

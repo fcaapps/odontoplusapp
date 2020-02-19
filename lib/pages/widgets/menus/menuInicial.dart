@@ -57,9 +57,7 @@ class _menuInicialState extends State<menuInicial> {
                   textoButton: 'Serviços',
                   onTap: () {
                     //Abrindo Tela de Serviços
-//                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-//                      return scaffOdontoPlusOne(pageDefault: 5, ehVisivel: false, ehVisivelPA: false,);
-//                    }));
+                    Navigator.pushNamed(context, '/servicos');
                   },
                 ),
                 SizedBox(
@@ -76,9 +74,7 @@ class _menuInicialState extends State<menuInicial> {
                   textoButton: 'Agendamentos',
                   onTap: () {
                     //Abrindo Tela de Agendamento
-//                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-//                      return scaffOdontoPlusOne(pageDefault: 6, ehVisivel: false, ehVisivelPA: false,);
-//                    }));
+                    Navigator.pushNamed(context, '/agendar');
                   },
                 ),
               ],
@@ -101,9 +97,7 @@ class _menuInicialState extends State<menuInicial> {
                   textoButton: 'Contato',
                   onTap: () {
                     //Abrindo Tela de Contato
-//                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-//                      return scaffOdontoPlusOne(pageDefault: 7, ehVisivel: false, ehVisivelPA: false,);
-//                    }));
+                    Navigator.pushNamed(context, '/contato');
                   },
                 ),
                 SizedBox(
@@ -120,9 +114,7 @@ class _menuInicialState extends State<menuInicial> {
                   textoButton: 'Histórico',
                   onTap: () {
                     //Abrindo Tela de Histórico
-//                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-//                      return scaffOdontoPlusOne(pageDefault: 8, ehVisivel: false, ehVisivelPA: false,);
-//                    }));
+                    Navigator.pushNamed(context, '/historico');
                   },
                 ),
               ],
@@ -145,9 +137,7 @@ class _menuInicialState extends State<menuInicial> {
                   textoButton: 'Dados',
                   onTap: () {
 //                    //Abrindo Tela de Dados
-//                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-//                      return scaffOdontoPlusOne(pageDefault: 9, ehVisivel: false, ehVisivelPA: true,);
-//                    }));
+                    Navigator.pushNamed(context, '/dados');
                   },
                 ),
                 SizedBox(
@@ -164,9 +154,7 @@ class _menuInicialState extends State<menuInicial> {
                   textoButton: 'Convênios',
                   onTap: () {
 //                    //Abrindo Tela de Convênios
-//                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-//                      return scaffOdontoPlusOne(pageDefault: 10, ehVisivel: false, ehVisivelPA: false);
-//                    }));
+                    Navigator.pushNamed(context, '/convenios');
                   },
                 ),
               ],

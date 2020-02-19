@@ -10,6 +10,6 @@ class ServicosPage extends StatefulWidget {
 class _ServicosPageState extends State<ServicosPage> {
   @override
   Widget build(BuildContext context) {
-    return scaffOdontoGeral(pagina: ListaOdontoPlusServicos(), precisaAjuda: false,) ;
+    return scaffOdontoGeral(pagina: SingleChildScrollView(child: ListaOdontoPlusServicos()), precisaAjuda: false,) ;
   }
 }

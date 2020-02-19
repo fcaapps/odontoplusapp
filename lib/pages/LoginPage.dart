@@ -23,14 +23,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
 
-//    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-//      statusBarColor: Theme.of(context).backgroundColor, //top bar color
-//      statusBarIconBrightness: Brightness.dark, //top bar icons
-//      systemNavigationBarColor:
-//      Theme.of(context).backgroundColor, //bottom bar color
-//      systemNavigationBarIconBrightness: Brightness.dark, //bottom bar icons
-//    ));
-
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Theme.of(context).primaryColor,
       statusBarIconBrightness: Brightness.light
@@ -67,15 +59,6 @@ class _LoginPageState extends State<LoginPage> {
 
                         Navigator.pushReplacementNamed(context, '/home');
 
-                        //Navigator.pushReplacementNamed(context, '/home');
-//                        Navigator.pushReplacement(context,
-//                            MaterialPageRoute(builder: (context) {
-//
-//                          return HomePage(
-//                              precisaAjuda: precisaajudaApp(
-//                            visivel: true,
-//                          ));
-//                        }));
                       },
                     ),
                   ),
@@ -112,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 590, left: 20, right: 20),
+                  padding: const EdgeInsets.only(top: 570, left: 20, right: 20),
                   child: termoscondicoesLogin(),
                 )
               ],
