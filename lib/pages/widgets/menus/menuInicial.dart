@@ -32,12 +32,12 @@ class _menuInicialState extends State<menuInicial> {
             Text(
               'Nosso app foi preparado pensando',
               style: TextStyle(
-                  fontFamily: 'Roboto', fontSize: 11, color: Colors.white),
+                  fontFamily: 'Roboto', fontSize: 14, color: Colors.white),
             ),
             Text(
               'em você',
               style: TextStyle(
-                  fontFamily: 'Roboto', fontSize: 11, color: Colors.white),
+                  fontFamily: 'Roboto', fontSize: 14, color: Colors.white),
             ),
             SizedBox(
               height: 30,

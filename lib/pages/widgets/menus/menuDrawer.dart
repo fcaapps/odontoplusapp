@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class menuDrawer extends StatelessWidget {
+class menuDrawer extends StatefulWidget {
   final Function(int) onPressed;
 
   const menuDrawer({Key key, this.onPressed}) : super(key: key);
+
+  @override
+  _menuDrawerState createState() => _menuDrawerState();
+}
+
+class _menuDrawerState extends State<menuDrawer> {
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +55,7 @@ class menuDrawer extends StatelessWidget {
                 )),
             ListTile(
                 onTap: () {
-
+                  Navigator.popAndPushNamed(context,'/perfil');
                 },
                 leading: Image.asset(
                   "assets/icons/perfil_drawer.png",
@@ -65,7 +72,7 @@ class menuDrawer extends StatelessWidget {
                 )),
             ListTile(
                 onTap: () {
-
+                  Navigator.popAndPushNamed(context,'/servicos');
                 },
                 leading: Image.asset(
                   "assets/icons/servicos.png",

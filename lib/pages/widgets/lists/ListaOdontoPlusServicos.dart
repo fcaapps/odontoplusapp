@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class ListaOdontoPlusServicos extends StatefulWidget {
   @override
@@ -11,7 +10,7 @@ class _ListaOdontoPlusServicosState extends State<ListaOdontoPlusServicos> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: double.infinity,
+      height: 700,
       width: double.infinity,
       decoration: BoxDecoration(
           color: Theme.of(context).backgroundColor,

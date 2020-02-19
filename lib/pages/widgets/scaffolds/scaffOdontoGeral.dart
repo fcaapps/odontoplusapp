@@ -1,28 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:odontoplusapp/pages/widgets/bottomnavigations/botnavOdontoPlusOne.dart';
+import 'package:odontoplusapp/pages/widgets/contact/ContatoOne.dart';
 import 'package:odontoplusapp/pages/widgets/drawers/drawerOne.dart';
 import 'package:odontoplusapp/pages/widgets/headers/textoHeaderApp.dart';
 import 'package:odontoplusapp/pages/widgets/menus/menuInicial.dart';
-import 'package:odontoplusapp/pages/widgets/precisaajudaApp.dart';
 
-class scaffOdontoHome extends StatefulWidget {
+import '../precisaajudaApp.dart';
+
+class scaffOdontoGeral extends StatefulWidget {
+  final Widget pagina;
+  final bool precisaAjuda;
+
+  const scaffOdontoGeral({Key key, this.pagina, this.precisaAjuda}) : super(key: key);
   @override
-  _scaffOdontoHomeState createState() => _scaffOdontoHomeState();
+  _scaffOdontoGeralState createState() => _scaffOdontoGeralState();
 }
 
-class _scaffOdontoHomeState extends State<scaffOdontoHome> {
+class _scaffOdontoGeralState extends State<scaffOdontoGeral> {
   GlobalKey<ScaffoldState> _keyScaffold = GlobalKey<ScaffoldState>();
   int posPixelInicialPage = 0;
 
   //Cor do appBAr após movimento de ListView
 
   Color _corAppBarAposMovimento() {
-    return posPixelInicialPage < 60
-        ? Theme.of(context).backgroundColor
-        : Theme.of(context).primaryColor;
+    return posPixelInicialPage < 200
+        ? Theme.of(context).primaryColor
+        : Theme.of(context).backgroundColor;
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +45,7 @@ class _scaffOdontoHomeState extends State<scaffOdontoHome> {
             Container(
               margin: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height - 150),
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).backgroundColor,
               width: double.infinity,
             ),
             Scaffold(
@@ -54,6 +59,12 @@ class _scaffOdontoHomeState extends State<scaffOdontoHome> {
               appBar: PreferredSize(
                 preferredSize: Size.fromHeight(65),
                 child: AppBar(
+                  leading: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Theme.of(context).platform == TargetPlatform.iOS ? Icon(Icons.arrow_back_ios) : Icon(Icons.arrow_back),
+                  ),
                   automaticallyImplyLeading: false,
                   shape: ContinuousRectangleBorder(
                       borderRadius: BorderRadius.only(
@@ -67,12 +78,14 @@ class _scaffOdontoHomeState extends State<scaffOdontoHome> {
                         }),
                   ],
                   iconTheme:
-                  IconThemeData(color: Theme.of(context).primaryColor),
+                  IconThemeData(color: Theme.of(context).backgroundColor),
+                  actionsIconTheme:
+                  IconThemeData(color: Theme.of(context).backgroundColor),
                   elevation: 0,
-                  backgroundColor: Theme.of(context).backgroundColor,
+                  backgroundColor: Theme.of(context).primaryColor,
                   //Texto do Header
                   title: textoHeaderApp(
-                    corTextoOdonto: Theme.of(context).primaryColor,
+                    corTextoOdonto: Theme.of(context).backgroundColor,
                   ),
                   centerTitle: true,
                   //brightness: Brightness.dark,
@@ -80,7 +93,7 @@ class _scaffOdontoHomeState extends State<scaffOdontoHome> {
               ),
               body: NotificationListener<ScrollUpdateNotification>(
                   child: SingleChildScrollView(
-                    child: menuInicial(),
+                    child: this.widget.pagina,
                   ),
                   onNotification: (notification) {
                     //print(notification.scrollDelta);
@@ -96,7 +109,7 @@ class _scaffOdontoHomeState extends State<scaffOdontoHome> {
               padding: EdgeInsets.only(
                   top: 130, left: MediaQuery.of(context).size.width - 100),
               child: precisaajudaApp(
-                visivel: true,
+                visivel: this.widget.precisaAjuda == null ? false : this.widget.precisaAjuda,
               ),
             )
           ],

@@ -8,6 +8,7 @@ import 'package:odontoplusapp/pages/widgets/precisaajudaApp.dart';
 import 'package:odontoplusapp/pages/widgets/semcadastroLogin.dart';
 import 'package:odontoplusapp/pages/widgets/termoscondicoesLogin.dart';
 import 'package:odontoplusapp/pages/widgets/userpassLogin.dart';
+import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 
 import 'HomePage.dart';
 
@@ -21,13 +22,20 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+
+//    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+//      statusBarColor: Theme.of(context).backgroundColor, //top bar color
+//      statusBarIconBrightness: Brightness.dark, //top bar icons
+//      systemNavigationBarColor:
+//      Theme.of(context).backgroundColor, //bottom bar color
+//      systemNavigationBarIconBrightness: Brightness.dark, //bottom bar icons
+//    ));
+
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Theme.of(context).backgroundColor, //top bar color
-      statusBarIconBrightness: Brightness.dark, //top bar icons
-      systemNavigationBarColor:
-          Theme.of(context).backgroundColor, //bottom bar color
-      systemNavigationBarIconBrightness: Brightness.dark, //bottom bar icons
+      statusBarColor: Theme.of(context).primaryColor,
+      statusBarIconBrightness: Brightness.light
     ));
+
     return SafeArea(
         bottom: true,
         top: true,
