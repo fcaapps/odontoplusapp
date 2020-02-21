@@ -17,6 +17,8 @@ import 'package:odontoplusapp/pages/TermosCondicoesPage.dart';
 import 'package:odontoplusapp/pages/widgets/DadosPage.dart';
 import 'package:odontoplusapp/utils/theme.dart';
 
+String menuSelecionado;
+
 void main() {
   runApp(MaterialApp(
     initialRoute: '/',
