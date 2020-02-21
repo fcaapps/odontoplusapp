@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:odontoplusapp/pages/AgendarPage.dart';
+import 'package:odontoplusapp/pages/CadastroUsuarioPage.dart';
 import 'package:odontoplusapp/pages/ConfigPage.dart';
 import 'package:odontoplusapp/pages/ContatoPage.dart';
 import 'package:odontoplusapp/pages/ConvenioDetailPage.dart';
@@ -21,6 +22,7 @@ void main() {
     initialRoute: '/',
     routes: {
       '/home': (context) => HomePage(),
+      '/cadastro_usuario': (context) => CadastroUsuarioPage(),
       '/termos' : (context) => TermosCondicoesPage(),
       '/contato': (context) => ContatoPage(),
       '/perfil': (context) => PerfilPage(),

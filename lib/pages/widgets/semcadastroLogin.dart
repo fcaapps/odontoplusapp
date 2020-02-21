@@ -20,7 +20,10 @@ class semcadastroLogin extends StatelessWidget {
               TextSpan(
                   text: 'Cadastrar agora.',
                   style: Theme.of(context).textTheme.caption,
-                  recognizer: TapGestureRecognizer()..onTap = () {}),
+                  recognizer: TapGestureRecognizer()..onTap = () {
+                    // Chamar Tela de Cadastro de Usuário
+                    Navigator.pushNamed(context, '/cadastro_usuario');
+                  }),
             ],
           ),
         ));

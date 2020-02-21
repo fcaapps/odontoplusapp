@@ -5,13 +5,15 @@ class buttonPrimary extends StatelessWidget {
   final bool isLoading;
   final double widthButao;
   final Function validarCampos;
+  final double heightButao;
+
 
   const buttonPrimary(
       {Key key,
       this.textButton,
       this.isLoading,
       this.widthButao,
-      this.validarCampos})
+      this.validarCampos, this.heightButao})
       : super(key: key);
 
   @override
@@ -23,7 +25,7 @@ class buttonPrimary extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(isLoading ? 50 : 50),
             color: Color(0XFFEC5981)),
-        height: 42,
+        height: heightButao,
         width: isLoading ? 50 : widthButao,
         alignment: Alignment.center,
         child: isLoading

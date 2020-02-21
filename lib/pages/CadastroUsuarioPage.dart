@@ -4,32 +4,30 @@ import 'package:odontoplusapp/pages/widgets/buttons/buttonFacebookOne.dart';
 import 'package:odontoplusapp/pages/widgets/buttons/buttonGoogleOne.dart';
 import 'package:odontoplusapp/pages/widgets/buttons/buttonPrimary.dart';
 import 'package:odontoplusapp/pages/widgets/headers/headerLogin.dart';
-import 'package:odontoplusapp/pages/widgets/precisaajudaApp.dart';
 import 'package:odontoplusapp/pages/widgets/semcadastroLogin.dart';
 import 'package:odontoplusapp/pages/widgets/termoscondicoesLogin.dart';
 import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/widgets/textfields/userpassLogin.dart';
-import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
+import 'package:odontoplusapp/pages/widgets/textfields/cadastroUsuario.dart';
 
-import 'HomePage.dart';
-
-class LoginPage extends StatefulWidget {
+class CadastroUsuarioPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _CadastroUsuarioPageState createState() => _CadastroUsuarioPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _CadastroUsuarioPageState extends State<CadastroUsuarioPage> {
   bool isLoading = false;
+  bool checkBoxValue = true;
 
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarColor: Theme.of(context).primaryColor,
         statusBarIconBrightness: Brightness.light));
-
     return SafeArea(
         bottom: true,
         top: true,
         child: Container(
+          //height: MediaQuery.of(context).size.height,
           color: Theme.of(context).backgroundColor,
           child: SingleChildScrollView(
             child: Stack(
@@ -39,62 +37,68 @@ class _LoginPageState extends State<LoginPage> {
                 //Usuário e Senha
                 Padding(
                   padding: const EdgeInsets.only(top: 160),
-                  child: userpassLogin(),
+                  child: cadastroUsuario(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 485, left: 50),
+                  child: Material(
+                    type: MaterialType.transparency,
+                    child: Row(
+                      children: <Widget>[
+                        Checkbox(
+                          value: checkBoxValue,
+                          activeColor: Color(0XFF707070),
+                          onChanged: (value) {
+                            setState(() {
+                              checkBoxValue = value;
+                            });
+                          },
+                        ),
+                        Text(
+                          'Sou Dentista',
+                          style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 12,
+                              color: Color(0XFF373737)),
+                        )
+                      ],
+                    ),
+                  ),
                 ),
                 //Button Entrar
                 Align(
                   alignment: Alignment.center,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 350),
+                    padding: const EdgeInsets.only(top: 530),
                     child: buttonPrimary(
                       textButton: 'ENTRAR',
                       isLoading: isLoading,
                       widthButao: MediaQuery.of(context).size.width - 60,
-                      heightButao: 42,
+                      heightButao: 48,
                       validarCampos: () {
                         setState(() {
                           isLoading = !isLoading;
                         });
-
                         Navigator.pushReplacementNamed(context, '/home');
                       },
                     ),
                   ),
                 ),
-                //Opção para cadastrar usuário
                 Padding(
-                  padding: const EdgeInsets.only(top: 410),
-                  child: semcadastroLogin(),
-                ),
-                //Separador
-                Align(
-                  alignment: Alignment.center,
-                  child: Container(
-                    margin: EdgeInsets.only(top: 440),
-                    height: 5,
-                    width: 25,
-                    decoration: BoxDecoration(
-                        color: Color(0XFFD4D4D4),
-                        borderRadius: BorderRadius.circular(40)),
-                  ),
-                ),
-                //Button de Acesso - Facebook
-                Padding(
-                  padding: const EdgeInsets.only(top: 460),
-                  child: buttonFacebookOne(
-                    textButton: 'Entrar com Facebook',
-                  ),
-                ),
-                //Button de Acesso - Google
-                Padding(
-                  padding: const EdgeInsets.only(top: 510),
-                  child: buttonGoogleOne(
-                    textButton: 'Entrar com Google',
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 570, left: 20, right: 20),
+                  padding: const EdgeInsets.only(top: 590, left: 20, right: 20),
                   child: termoscondicoesLogin(),
+                ),
+                Container(
+                  margin: EdgeInsets.all(8),
+                  child: Material(
+                    type: MaterialType.transparency,
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      icon: Icon(Icons.arrow_back),
+                    ),
+                  ),
                 )
               ],
             ),
