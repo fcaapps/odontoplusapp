@@ -35,7 +35,10 @@ class _ListaOdontoPlusServicosState extends State<ListaOdontoPlusServicos> {
             ),
             ListTile(
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  //Chama tela de detalhes
+                  Navigator.pushNamed(context,'/servico_detail');
+                },
                 icon: Icon(Icons.arrow_forward_ios, size: 15,),
               ),
               title: Text('Loren ipsum',

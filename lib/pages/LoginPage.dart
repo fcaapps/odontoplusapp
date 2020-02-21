@@ -22,11 +22,9 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Theme.of(context).primaryColor,
-      statusBarIconBrightness: Brightness.light
-    ));
+        statusBarColor: Theme.of(context).primaryColor,
+        statusBarIconBrightness: Brightness.light));
 
     return SafeArea(
         bottom: true,
@@ -58,7 +56,6 @@ class _LoginPageState extends State<LoginPage> {
                         });
 
                         Navigator.pushReplacementNamed(context, '/home');
-
                       },
                     ),
                   ),

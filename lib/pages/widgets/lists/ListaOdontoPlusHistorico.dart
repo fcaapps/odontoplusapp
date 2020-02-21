@@ -24,7 +24,7 @@ class _ListaOdontoPlusHistoricoState extends State<ListaOdontoPlusHistorico> {
               padding: const EdgeInsets.only(top: 20, bottom: 30),
               alignment: Alignment.center,
               child: Text(
-                'Histórico',
+                'Históricos',
                 style: TextStyle(
                     fontFamily: 'Roboto',
                     fontWeight: FontWeight.w700,
@@ -33,6 +33,10 @@ class _ListaOdontoPlusHistoricoState extends State<ListaOdontoPlusHistorico> {
               ),
             ),
             ListTile(
+              onTap: () {
+                //Chamar Detalhe Histórico
+                Navigator.pushNamed(context, '/historico_detail');
+              },
               trailing: Text('07/09'),
               title: Text('Loren ipsum',
                   style: TextStyle(

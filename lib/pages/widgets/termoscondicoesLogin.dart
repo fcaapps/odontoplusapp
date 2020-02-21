@@ -25,7 +25,10 @@ class termoscondicoesLogin extends StatelessWidget {
                     decoration: TextDecoration.underline,
 
                   ),
-                  recognizer: TapGestureRecognizer()..onTap = () {}),
+                  recognizer: TapGestureRecognizer()..onTap = () {
+                    //Chama termos e condições
+                    Navigator.pushNamed(context, '/termos');
+                  }),
             ],
           ),
         ));

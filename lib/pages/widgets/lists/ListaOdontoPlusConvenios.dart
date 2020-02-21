@@ -42,7 +42,10 @@ class _ListaOdontoPlusConveniosState extends State<ListaOdontoPlusConvenios> {
                 ),
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  //Chamar Detalhes do Convênio
+                  Navigator.pushNamed(context, '/convenio_detail');
+                },
                 icon: Icon(Icons.arrow_forward_ios, size: 15,),
               ),
               title: Text('Loren ipsum',
