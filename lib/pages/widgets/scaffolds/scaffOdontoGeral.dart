@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:odontoplusapp/pages/widgets/bottomnavigations/botnavOdontoPlusOne.dart';
+import 'package:odontoplusapp/main.dart';
+import 'package:odontoplusapp/pages/widgets/bottomnavigations/botnavAppBar.dart';
 import 'package:odontoplusapp/pages/widgets/contact/ContatoOne.dart';
 import 'package:odontoplusapp/pages/widgets/drawers/drawerOne.dart';
 import 'package:odontoplusapp/pages/widgets/headers/textoHeaderApp.dart';
@@ -103,7 +104,7 @@ class _scaffOdontoGeralState extends State<scaffOdontoGeral> {
                       print(notification.metrics.pixels);
                     });
                   }),
-              bottomNavigationBar: bottomNavigationBar,
+              bottomNavigationBar: botnavAppBar(),
             ),
             Padding(
               padding: EdgeInsets.only(

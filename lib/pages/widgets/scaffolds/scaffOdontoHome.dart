@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:odontoplusapp/pages/widgets/bottomnavigations/botnavOdontoPlusOne.dart';
+import 'package:odontoplusapp/pages/AgendarPage.dart';
+import 'package:odontoplusapp/pages/HomePage.dart';
+import 'package:odontoplusapp/pages/PerfilPage.dart';
+import 'package:odontoplusapp/pages/widgets/bottomnavigations/botnavAppBar.dart';
 import 'package:odontoplusapp/pages/widgets/drawers/drawerOne.dart';
 import 'package:odontoplusapp/pages/widgets/headers/textoHeaderApp.dart';
 import 'package:odontoplusapp/pages/widgets/menus/menuInicial.dart';
@@ -14,8 +17,6 @@ class scaffOdontoHome extends StatefulWidget {
 class _scaffOdontoHomeState extends State<scaffOdontoHome> {
   GlobalKey<ScaffoldState> _keyScaffold = GlobalKey<ScaffoldState>();
   int posPixelInicialPage = 0;
-
-  //Cor do appBAr após movimento de ListView
 
   Color _corAppBarAposMovimento() {
     return posPixelInicialPage < 60
@@ -90,7 +91,7 @@ class _scaffOdontoHomeState extends State<scaffOdontoHome> {
                       print(notification.metrics.pixels);
                     });
                   }),
-              bottomNavigationBar: bottomNavigationBar,
+              bottomNavigationBar: botnavAppBar(),
             ),
             Padding(
               padding: EdgeInsets.only(
