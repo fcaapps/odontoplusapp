@@ -158,7 +158,9 @@ class _menuInicialState extends State<menuInicial> {
                   },
                 ),
               ],
-            )
+            ),SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),

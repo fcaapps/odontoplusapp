@@ -10,7 +10,7 @@ class _ContatoOneState extends State<ContatoOne> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        height: 700,
+        height: 800,
         color: Theme.of(context).primaryColor,
         child: Stack(
           children: <Widget>[
@@ -53,20 +53,12 @@ class _ContatoOneState extends State<ContatoOne> {
                   SizedBox(
                     height: 5,
                   ),
-//                  Text(
-//                    'ou ligação para te ajudar e passar informações.',
-//                    style: TextStyle(
-//                        fontFamily: 'Roboto',
-//                        color: Colors.white,
-//                        fontSize: 14,
-//                        fontWeight: FontWeight.w700),
-//                  )
                 ],
               ),
             ),
             Container(
               margin: EdgeInsets.only(top: 180),
-              height: 600,
+              height: 700,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.white,

@@ -18,6 +18,9 @@ import 'package:odontoplusapp/pages/widgets/DadosPage.dart';
 import 'package:odontoplusapp/utils/theme.dart';
 
 String menuSelecionado = "Home";
+String imageHome = "assets/icons/home2.png";
+String imageAgendar = "assets/icons/calendar2.png";
+String imagePerfil = "assets/icons/perfil2.png";
 
 void main() {
   runApp(MaterialApp(

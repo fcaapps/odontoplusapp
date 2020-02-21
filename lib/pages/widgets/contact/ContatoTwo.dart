@@ -41,14 +41,6 @@ class _ContatoTwoState extends State<ContatoTwo> {
                 ),)
               ],
             ),
-//            Align(
-//              alignment: Alignment.topCenter,
-//              child: CircleAvatar(
-//                backgroundColor: Colors.transparent,
-//                backgroundImage: AssetImage("assets/images/avatar2.png"),
-//                radius: 70
-//              ),
-//            ),
             Container(
               margin: EdgeInsets.only(top: 140),
               height: 600,
