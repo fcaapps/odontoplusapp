@@ -37,7 +37,7 @@ class precisaajudaApp extends StatelessWidget {
           opacity: 0.6,
           child: Container(
               margin: EdgeInsets.fromLTRB(4, 4, 0, 2),
-              height: 55,
+              height: 56,
               width: 200,
               decoration: BoxDecoration(
                 color: Color(0XFF24A9A0),

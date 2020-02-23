@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:odontoplusapp/pages/AgendarPage.dart';
-import 'package:odontoplusapp/pages/HomePage.dart';
-import 'package:odontoplusapp/pages/PerfilPage.dart';
+import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/pacientes/AgendarPage.dart';
+import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/pacientes/HomePage.dart';
+import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/pacientes/PerfilPage.dart';
 import 'package:odontoplusapp/pages/widgets/bottomnavigations/botnavAppBar.dart';
 import 'package:odontoplusapp/pages/widgets/drawers/drawerOne.dart';
 import 'package:odontoplusapp/pages/widgets/headers/textoHeaderApp.dart';
@@ -53,7 +53,7 @@ class _scaffOdontoHomeState extends State<scaffOdontoHome> {
                 },
               ),
               appBar: PreferredSize(
-                preferredSize: Size.fromHeight(65),
+                preferredSize: Size.fromHeight(60),
                 child: AppBar(
                   automaticallyImplyLeading: false,
                   shape: ContinuousRectangleBorder(

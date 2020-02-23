@@ -40,7 +40,7 @@ class _CadastroUsuarioPageState extends State<CadastroUsuarioPage> {
                   child: cadastroUsuario(),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 485, left: 50),
+                  padding: EdgeInsets.only(top: 485, left: 50),
                   child: Material(
                     type: MaterialType.transparency,
                     child: Row(
