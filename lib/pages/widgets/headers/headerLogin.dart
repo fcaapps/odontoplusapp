@@ -6,23 +6,26 @@ class headerLogin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        Container(
-          height: 180,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/images/logo_header2.jpg"),
-                fit: BoxFit.cover,
+        Opacity(
+          opacity: 0.4,
+          child: Container(
+            height: 180,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/logo_header2.jpg"),
+                  fit: BoxFit.cover,
+              ),
+              color: Theme.of(context).primaryColor,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(100),
+                bottomRight: Radius.circular(100),
+              ),
             ),
-            color: Theme.of(context).primaryColor,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(100),
-              bottomRight: Radius.circular(100),
-            ),
+            alignment: Alignment.center,
           ),
-          alignment: Alignment.center,
         ),
         Opacity(
-          opacity: 0.8,
+          opacity: 0.6,
           child: Container(
             height: 180,
             decoration: BoxDecoration(
@@ -33,8 +36,19 @@ class headerLogin extends StatelessWidget {
               ),
             ),
             alignment: Alignment.center,
-            child: Image.asset("assets/images/logo_header.png", fit: BoxFit.cover, height: 68, width: 68,),
           ),
+        ),
+        Container(
+          height: 180,
+          decoration: BoxDecoration(
+            color: Colors.transparent,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(100),
+              bottomRight: Radius.circular(100),
+            ),
+          ),
+          alignment: Alignment.center,
+          child: Image.asset("assets/images/logo_header.png", fit: BoxFit.cover, height: 68, width: 68,),
         ),
       ],
     );

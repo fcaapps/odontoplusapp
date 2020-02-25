@@ -115,10 +115,17 @@ class _LoginPageState extends State<LoginPage> {
                           Container(
                             alignment: Alignment.center,
                             child: FlatButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/reset_pass');
+                              },
                               child: Text(
                                 'Esqueci minha senha',
-                                style: Theme.of(context).textTheme.display3,
+                                style: TextStyle(
+                                  fontFamily: 'Roboto',
+                                  fontSize: 12.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black45,
+                                ),
                               ),
                             ),
                           ),
@@ -150,6 +157,8 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.pushReplacementNamed(context, '/home');
                         } else if (usuarioController.text == 'Diego') {
                           Navigator.pushReplacementNamed(context, '/home_dentista');
+                        } else {
+                          Navigator.pushReplacementNamed(context, '/home');
                         }
                       },
                     ),

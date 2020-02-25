@@ -26,7 +26,7 @@ class buttonPrimary extends StatelessWidget {
             borderRadius: BorderRadius.circular(isLoading ? 50 : 50),
             color: Color(0XFFEC5981)),
         height: heightButao,
-        width: isLoading ? 50 : widthButao,
+        width: isLoading ? 42 : widthButao,
         alignment: Alignment.center,
         child: isLoading
             ? Center(

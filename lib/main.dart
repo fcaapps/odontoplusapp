@@ -10,6 +10,7 @@ import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/paciente
 import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/pacientes/HistoricoPage.dart';
 import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/pacientes/HomePage.dart';
 import 'package:odontoplusapp/pages/LoginPage.dart';
+import 'package:odontoplusapp/pages/ResetPasswordPage.dart';
 import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/pacientes/PerfilPage.dart';
 import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/pacientes/ServicoDetailPage.dart';
 import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/pacientes/ServicosPage.dart';
@@ -43,6 +44,7 @@ void main() {
       '/convenios': (context) => ConveniosPage(),
       '/convenio_detail': (context) => ConvenioDetailPage(),
       '/configs': (context) => ConfigPage(),
+      '/reset_pass': (context) => ResetPasswordPage(),
     },
     theme: basicTheme(),
     title: 'Odonto Plus',
