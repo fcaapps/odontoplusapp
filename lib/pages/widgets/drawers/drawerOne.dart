@@ -31,10 +31,10 @@ class _drawerOneState extends State<drawerOne> {
                   height: 30,
                   alignment: Alignment.centerLeft,
                   padding: const EdgeInsets.symmetric(horizontal: 45),
-                  child: Text(">> Usuário logado: ${!model.isLoggedIn() ? "Desconhecido" : model.userData["nome"]}",
+                  child: Text(">> Usuário: ${!model.isLoggedIn() ? "Desconhecido" : model.userData["nome"]}",
                   style: TextStyle(
                     fontFamily: 'Roboto',
-                    fontSize: 16,
+                    fontSize: 12,
                     color: Colors.white
                   ),),
                 ),

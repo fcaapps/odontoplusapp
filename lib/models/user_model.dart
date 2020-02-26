@@ -1,7 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:odontoplusapp/pages/api_response.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'usuario.dart';
 
 import '../main.dart';
 
@@ -11,11 +14,15 @@ class UserModel extends Model {
 
   FirebaseUser firebaseUser;
 
+  GoogleSignIn googleSignIn = GoogleSignIn();
+
   Map<String, dynamic> userData = Map();
 
   bool isLoading = false;
 
   bool isDentista = false;
+
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
 
   @override
@@ -82,8 +89,79 @@ class UserModel extends Model {
 
   }
 
+  String firebaseUserUid;
+
+
+  Future<ApiResponse> signInGoogle() async {
+    try {
+      // Login com o Google
+      final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+      final GoogleSignInAuthentication googleAuth =
+      await googleUser.authentication;
+
+      print("Google User: ${googleUser.email}");
+
+      // Credenciais para o Firebase
+      final AuthCredential credential = GoogleAuthProvider.getCredential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      // Login no Firebase
+      AuthResult result = await _auth.signInWithCredential(credential);
+      firebaseUser = result.user;
+      print("Firebase Nome: ${firebaseUser.displayName}");
+      print("Firebase Email: ${firebaseUser.email}");
+      print("Firebase Foto: ${firebaseUser.photoUrl}");
+
+      // Cria um usuario do app
+      final user = Usuario(
+        nome: firebaseUser.displayName,
+        login: firebaseUser.email,
+        email: firebaseUser.email,
+        urlFoto: firebaseUser.photoUrl,
+      );
+      // Salva no Firestore
+      saveUser(firebaseUser);
+
+      await _loadCurrentUser();
+      notifyListeners();
+
+      // Resposta genérica
+      return ApiResponse.ok();
+      notifyListeners();
+
+    } catch (error) {
+      print("Firebase error $error");
+      return ApiResponse.error(msg: "Não foi possível fazer o login");
+    }
+  }
+
+  void logoutGoogle() async {
+
+    await _auth.signOut();
+    await _googleSignIn.signOut();
+  }
+
+  // salva o usuario na collection de usuarios logados
+  void saveUser(FirebaseUser fUser) async {
+    if (fUser != null) {
+      firebaseUserUid = fUser.uid;
+      DocumentReference refUser =
+      Firestore.instance.collection("usuarios").document(firebaseUserUid);
+      refUser.setData({
+        'nome': fUser.displayName,
+        'email': fUser.email,
+        'login': fUser.email,
+        'urlFoto': fUser.photoUrl,
+      });
+
+    }
+  }
+
   void signOut() async {
     await _auth.signOut();
+    await _googleSignIn.signOut();
 
     userData = Map();
     firebaseUser = null;
@@ -106,7 +184,6 @@ class UserModel extends Model {
         DocumentSnapshot docUser =
         await Firestore.instance.collection("usuarios").document(firebaseUser.uid).get();
         userData = docUser.data;
-
       }
     }
     notifyListeners();

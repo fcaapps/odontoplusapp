@@ -7,13 +7,12 @@ import 'package:odontoplusapp/pages/widgets/buttons/buttonFacebookOne.dart';
 import 'package:odontoplusapp/pages/widgets/buttons/buttonGoogleOne.dart';
 import 'package:odontoplusapp/pages/widgets/buttons/buttonPrimary.dart';
 import 'package:odontoplusapp/pages/widgets/headers/headerLogin.dart';
-import 'package:odontoplusapp/pages/widgets/precisaajudaApp.dart';
 import 'package:odontoplusapp/pages/widgets/semcadastroLogin.dart';
 import 'package:odontoplusapp/pages/widgets/termoscondicoesLogin.dart';
 import 'package:scoped_model/scoped_model.dart';
 import '../main.dart';
-import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/widgets/textfields/userpassLogin.dart';
-import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
+import 'package:odontoplusapp/firebase/firebase_service.dart';
+import 'package:odontoplusapp/pages/api_response.dart';
 
 import 'pacientes/HomePage.dart';
 
@@ -268,15 +267,33 @@ class _LoginPageState extends State<LoginPage> {
                     //Button de Acesso - Facebook
                     Padding(
                       padding: const EdgeInsets.only(top: 460),
-                      child: buttonFacebookOne(
-                        textButton: 'Entrar com Facebook',
+                      child: GestureDetector(
+                        onTap: () {
+                          model.logoutGoogle();
+                        },
+                        child: buttonFacebookOne(
+                          textButton: 'Entrar com Facebook',
+                        ),
                       ),
                     ),
                     //Button de Acesso - Google
                     Padding(
                       padding: const EdgeInsets.only(top: 510),
-                      child: buttonGoogleOne(
-                        textButton: 'Entrar com Google',
+                      child: GestureDetector(
+                        onTap: () async {
+                          final service = FirebaseService();
+                          ApiResponse response = await model.signInGoogle();
+
+                          if (response.ok) {
+                            Navigator.pushNamed(context, '/home');
+                          } else {
+                              //alert(context, response.msg);
+                          }
+
+                        },
+                        child: buttonGoogleOne(
+                          textButton: 'Entrar com Google',
+                        ),
                       ),
                     ),
                     Padding(

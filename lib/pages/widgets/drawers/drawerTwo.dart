@@ -34,10 +34,10 @@ class _drawerTwoState extends State<drawerTwo> {
                   height: 30,
                   alignment: Alignment.centerLeft,
                   padding: const EdgeInsets.symmetric(horizontal: 25),
-                  child: Text(">> Usuário logado: ${!model.isLoggedIn() ? "Desconhecido" : model.userData["nome"]}",
+                  child: Text(">> Usuário: ${!model.isLoggedIn() ? "" : model.userData["nome"]}",
                     style: TextStyle(
                         fontFamily: 'Roboto',
-                        fontSize: 16,
+                        fontSize: 12,
                         color: Colors.white
                     ),),
                 ),
