@@ -118,7 +118,7 @@ class rodapeSitioOne extends StatelessWidget {
                 Image.asset("assets/icons/instagram.png", height: 25, width: 25, color: Colors.white,),
                 Image.asset("assets/icons/twitter.png", height: 25, width: 25, color: Colors.white,),
                 Image.asset("assets/icons/facebook1.png", height: 25, width: 25, color: Colors.white,),
-                Image.asset("assets/icons/globo.png", height: 25, width: 25, color: Colors.white,),
+                Image.asset("assets/icons/internet.png", height: 25, width: 25, color: Colors.white,),
               ],
             ),
           )

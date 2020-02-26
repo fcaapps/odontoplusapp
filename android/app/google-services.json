@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "136168896366",
+    "firebase_url": "https://odontoplus-61471.firebaseio.com",
+    "project_id": "odontoplus-61471",
+    "storage_bucket": "odontoplus-61471.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136168896366:android:a5bd604ff1ff175024b37f",
+        "android_client_info": {
+          "package_name": "br.net.fernandocastro.odontoplusapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136168896366-226v6mlm1kkkv0spmupch7p07srsqdhq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.net.fernandocastro.odontoplusapp",
+            "certificate_hash": "1334c2b6b4f9c56ef68740156471d2eb624b7a2d"
+          }
+        },
+        {
+          "client_id": "136168896366-e37rjpan7tebqdfun9d87spl1b5bnf9m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVZ--43pcqsGe0cmIBW3RxTi11sgIIZgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136168896366-e37rjpan7tebqdfun9d87spl1b5bnf9m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
