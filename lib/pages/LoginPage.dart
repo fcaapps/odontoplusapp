@@ -269,7 +269,7 @@ class _LoginPageState extends State<LoginPage> {
                       padding: const EdgeInsets.only(top: 460),
                       child: GestureDetector(
                         onTap: () {
-                          model.logoutGoogle();
+                          //model.logoutGoogle();
                         },
                         child: buttonFacebookOne(
                           textButton: 'Entrar com Facebook',
