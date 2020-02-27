@@ -44,8 +44,10 @@ class _LoginPageState extends State<LoginPage> {
   Future _verificarUsuarioLogado() async {
     FirebaseAuth auth = FirebaseAuth.instance;
     FirebaseUser usuarioLogado = await auth.currentUser();
+    print("Usuário logado:"+usuarioLogado.toString());
 
     if (usuarioLogado != null) {
+      print("Entrou");
 
       DocumentSnapshot docUser =
       await Firestore.instance.collection("usuarios").document(usuarioLogado.uid).get();
@@ -282,14 +284,18 @@ class _LoginPageState extends State<LoginPage> {
                       padding: const EdgeInsets.only(top: 510),
                       child: GestureDetector(
                         onTap: () async {
-                          final service = FirebaseService();
-                          ApiResponse response = await model.signInGoogle();
-
-                          if (response.ok) {
+                          model.signInWithGoogle().whenComplete(() {
                             Navigator.pushNamed(context, '/home');
-                          } else {
-                              //alert(context, response.msg);
-                          }
+                          });
+
+//                          final service = FirebaseService();
+//                          ApiResponse response = await model.signInGoogle();
+//
+//                          if (response.ok) {
+//                            Navigator.pushNamed(context, '/home');
+//                          } else {
+//                              //alert(context, response.msg);
+//                          }
 
                         },
                         child: buttonGoogleOne(
