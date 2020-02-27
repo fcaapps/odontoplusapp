@@ -7,6 +7,7 @@ class Usuario {
   String urlFoto;
   String token;
   String telefone;
+  bool dentista;
   List<String> roles;
 
   Usuario(
@@ -16,6 +17,7 @@ class Usuario {
         this.urlFoto,
         this.token,
         this.telefone,
+        this.dentista,
         this.roles});
 
   Usuario.fromJson(Map<String, dynamic> json) {
@@ -25,6 +27,7 @@ class Usuario {
     urlFoto = json['urlFoto'];
     token = json['token'];
     telefone = json['telefone'];
+    dentista = json['dentista'];
     roles = json['roles'] != null ? json['roles'].cast<String>() : null;
   }
 
@@ -36,6 +39,7 @@ class Usuario {
     data['urlFoto'] = this.urlFoto;
     data['token'] = this.token;
     data['telefone'] = this.telefone;
+    data['dentista'] = this.dentista;
     data['roles'] = this.roles;
     return data;
   }

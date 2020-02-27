@@ -117,8 +117,9 @@ class UserModel extends Model {
       // Cria um usuario do app
       final user = Usuario(
         nome: firebaseUser.displayName,
-        login: firebaseUser.email,
         email: firebaseUser.email,
+        telefone: firebaseUser.phoneNumber,
+        dentista: false,
         urlFoto: firebaseUser.photoUrl,
       );
       // Salva no Firestore
@@ -152,7 +153,8 @@ class UserModel extends Model {
       refUser.setData({
         'nome': fUser.displayName,
         'email': fUser.email,
-        'login': fUser.email,
+        'telefone': fUser.phoneNumber,
+        'dentista': false,
         'urlFoto': fUser.photoUrl,
       });
 

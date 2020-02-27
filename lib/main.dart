@@ -28,6 +28,7 @@ String imageAgendar = "assets/icons/calendar2.png";
 String imagePerfil = "assets/icons/perfil2.png";
 String usuarioInformado;
 bool isDentistaG = false;
+bool isGoogleCredential = false;
 
 void main() {
 

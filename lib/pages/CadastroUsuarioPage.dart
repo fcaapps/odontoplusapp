@@ -500,7 +500,8 @@ class _CadastroUsuarioPageState extends State<CadastroUsuarioPage> {
                                       "nome": _nomeController.text,
                                       "email": _emailController.text,
                                       "telefone": _telefoneController.text,
-                                      "dentista": checkBoxValue
+                                      "dentista": checkBoxValue,
+                                      "urlFoto": ""
                                     };
 
 //                                    print("userData: " + userData.toString());

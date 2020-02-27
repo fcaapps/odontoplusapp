@@ -45,10 +45,11 @@ class _LoginPageState extends State<LoginPage> {
     FirebaseAuth auth = FirebaseAuth.instance;
     FirebaseUser usuarioLogado = await auth.currentUser();
 
-    DocumentSnapshot docUser =
-    await Firestore.instance.collection("usuarios").document(usuarioLogado.uid).get();
-
     if (usuarioLogado != null) {
+
+      DocumentSnapshot docUser =
+      await Firestore.instance.collection("usuarios").document(usuarioLogado.uid).get();
+
       if (!docUser.data["dentista"])
         Navigator.pushNamed(context, '/home');
       else
@@ -269,7 +270,7 @@ class _LoginPageState extends State<LoginPage> {
                       padding: const EdgeInsets.only(top: 460),
                       child: GestureDetector(
                         onTap: () {
-                          //model.logoutGoogle();
+                          model.logoutGoogle();
                         },
                         child: buttonFacebookOne(
                           textButton: 'Entrar com Facebook',
