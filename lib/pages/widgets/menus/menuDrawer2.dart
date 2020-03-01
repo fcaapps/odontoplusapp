@@ -116,7 +116,7 @@ class _menuDrawer2State extends State<menuDrawer2> {
                 ListTile(
                     onTap: () {
                       model.signOut();
-                      Navigator.popAndPushNamed(context, '/login');
+                      Navigator.pushReplacementNamed(context, '/login');
                     },
                     title: Text(
                       'Sair',

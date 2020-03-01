@@ -11,8 +11,6 @@ import 'package:odontoplusapp/pages/widgets/semcadastroLogin.dart';
 import 'package:odontoplusapp/pages/widgets/termoscondicoesLogin.dart';
 import 'package:scoped_model/scoped_model.dart';
 import '../main.dart';
-import 'package:odontoplusapp/firebase/firebase_service.dart';
-import 'package:odontoplusapp/pages/api_response.dart';
 
 import 'pacientes/HomePage.dart';
 
@@ -284,12 +282,13 @@ class _LoginPageState extends State<LoginPage> {
                       padding: const EdgeInsets.only(top: 510),
                       child: GestureDetector(
                         onTap: () async {
-                          model.signInWithGoogle().whenComplete(() {
+                          await model.signInWithGoogle().whenComplete((){
                             Navigator.pushNamed(context, '/home');
                           });
-
 //                          final service = FirebaseService();
-//                          ApiResponse response = await model.signInGoogle();
+//                          service.loginGoogle().whenComplete(() {
+//                            Navigator.pushNamed(context, '/home');
+//                          });
 //
 //                          if (response.ok) {
 //                            Navigator.pushNamed(context, '/home');

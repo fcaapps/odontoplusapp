@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:odontoplusapp/pages/widgets/details/servicoDetalhes.dart';
-import 'package:odontoplusapp/pages/widgets/lists/ListaOdontoPlusServicos.dart';
 import 'package:odontoplusapp/pages/widgets/scaffolds/scaffOdontoGeral.dart';
 
 class ServicoDetailPage extends StatefulWidget {

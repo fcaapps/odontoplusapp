@@ -1,15 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:odontoplusapp/models/user_model.dart';
-import 'package:odontoplusapp/pages/widgets/buttons/buttonFacebookOne.dart';
-import 'package:odontoplusapp/pages/widgets/buttons/buttonGoogleOne.dart';
 import 'package:odontoplusapp/pages/widgets/buttons/buttonPrimary.dart';
 import 'package:odontoplusapp/pages/widgets/headers/headerLogin.dart';
-import 'package:odontoplusapp/pages/widgets/semcadastroLogin.dart';
 import 'package:odontoplusapp/pages/widgets/termoscondicoesLogin.dart';
-import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/widgets/textfields/userpassLogin.dart';
-import 'package:odontoplusapp/pages/widgets/textfields/cadastroUsuario.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class CadastroUsuarioPage extends StatefulWidget {

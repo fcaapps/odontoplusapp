@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:odontoplusapp/models/user_model.dart';
 import 'package:odontoplusapp/pages/widgets/buttons/buttonMenuInicialOne.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -26,7 +25,7 @@ class _menuInicialState extends State<menuInicial> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  'Seja bem vindo, ${!model.isLoggedIn() ? "Desconhecido" : model.userData["nome"]}',
+                  'Seja bem vindo, ${!model.isLoggedIn() ? "Desconhecido" : model.userData["nome"] == null ? "" : model.userData["nome"]}',
                   style: TextStyle(
                       fontFamily: 'Roboto',
                       fontWeight: FontWeight.bold,

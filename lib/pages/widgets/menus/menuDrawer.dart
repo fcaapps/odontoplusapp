@@ -250,7 +250,7 @@ class _menuDrawerState extends State<menuDrawer> {
                 ListTile(
                     onTap: () {
                       model.signOut();
-                      Navigator.popAndPushNamed(context, '/login');
+                      Navigator.pushReplacementNamed(context, '/login');
                     },
                     leading: Icon(Icons.input),
                     title: Text(

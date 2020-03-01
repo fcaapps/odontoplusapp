@@ -10,6 +10,7 @@ String firebaseUserUid;
 class FirebaseService {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  FirebaseUser firebaseUser;
 
   Future<ApiResponse> login(String email, String senha) async {
     try {
@@ -23,10 +24,11 @@ class FirebaseService {
 
       // Cria um usuario do app
       final user = Usuario(
-        nome: fUser.displayName,
-        login: fUser.email,
-        email: fUser.email,
-        urlFoto: fUser.photoUrl,
+        nome: firebaseUser.displayName,
+        email: firebaseUser.email,
+        telefone: firebaseUser.phoneNumber,
+        dentista: false,
+        urlFoto: firebaseUser.photoUrl,
       );
       // Salva no Firestore
       saveUser(fUser);
@@ -71,6 +73,9 @@ class FirebaseService {
       // Salva no Firestore
       saveUser(fUser);
 
+      //carregausuario
+      _loadCurrentUser();
+
       // Resposta genérica
       return ApiResponse.ok();
     } catch (error) {
@@ -88,9 +93,24 @@ class FirebaseService {
       refUser.setData({
         'nome': fUser.displayName,
         'email': fUser.email,
-        'login': fUser.email,
+        'telefone': fUser.phoneNumber,
+        'dentista': false,
         'urlFoto': fUser.photoUrl,
       });
+    }
+  }
+
+  Map<String, dynamic> userData = Map();
+
+  Future<Null> _loadCurrentUser() async {
+    if(firebaseUser == null)
+      firebaseUser = await _auth.currentUser();
+    if(firebaseUser != null){
+      if(userData["nome"] == null){
+        DocumentSnapshot docUser =
+        await Firestore.instance.collection("usuarios").document(firebaseUser.uid).get();
+        userData = docUser.data;
+      }
     }
   }
 

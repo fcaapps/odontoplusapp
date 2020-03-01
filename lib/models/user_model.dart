@@ -91,7 +91,6 @@ class UserModel extends Model {
 
   String firebaseUserUid;
 
-
   Future<ApiResponse> signInGoogle() async {
     try {
       // Login com o Google

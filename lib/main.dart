@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/pacientes/AgendarPage.dart';
 import 'package:odontoplusapp/pages/CadastroUsuarioPage.dart';
 import 'package:odontoplusapp/pages/ConfigPage.dart';
@@ -10,6 +9,7 @@ import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/paciente
 import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/pacientes/HistoricoPage.dart';
 import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/pacientes/HomePage.dart';
 import 'package:odontoplusapp/pages/LoginPage.dart';
+import 'package:odontoplusapp/pages/LoginPage2.dart';
 import 'package:odontoplusapp/pages/ResetPasswordPage.dart';
 import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/pacientes/PerfilPage.dart';
 import 'file:///C:/Projetos/Flutter/aplicativos/odontoplusapp/lib/pages/pacientes/ServicoDetailPage.dart';
