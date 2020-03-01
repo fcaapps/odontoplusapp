@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:odontoplusapp/models/user_model.dart';
+import 'package:odontoplusapp/pages/widgets/congratulations/bemvindoOne.dart';
+import 'package:odontoplusapp/pages/widgets/congratulations/bemvindoTwo.dart';
 import 'package:odontoplusapp/pages/widgets/headers/headerMenuOdontoPlus.dart';
 import 'package:odontoplusapp/pages/widgets/menus/menuDrawer.dart';
 import 'package:odontoplusapp/pages/widgets/rodapes/rodapeSitioOne.dart';
@@ -31,12 +33,7 @@ class _drawerOneState extends State<drawerOne> {
                   height: 30,
                   alignment: Alignment.centerLeft,
                   padding: const EdgeInsets.symmetric(horizontal: 45),
-                  child: Text(">> Usuário: ${!model.isLoggedIn() ? "Desconhecido" : model.userData["nome"]}",
-                  style: TextStyle(
-                    fontFamily: 'Roboto',
-                    fontSize: 12,
-                    color: Colors.white
-                  ),),
+                  child: bemvindoTwo(),
                 ),
                 menuDrawer(),
                 SizedBox(height: 40),

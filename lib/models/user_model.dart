@@ -192,7 +192,7 @@ class UserModel extends Model {
     print("User Sign Out");
   }
 
-  void signOut() async {
+  Future<void> signOut() async {
     await _auth.signOut();
     await _googleSignIn.signOut();
 
@@ -200,6 +200,7 @@ class UserModel extends Model {
     firebaseUser = null;
 
     notifyListeners();
+
 
   }
 

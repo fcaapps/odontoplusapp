@@ -51,9 +51,9 @@ class _LoginPageState extends State<LoginPage> {
       await Firestore.instance.collection("usuarios").document(usuarioLogado.uid).get();
 
       if (!docUser.data["dentista"])
-        Navigator.pushNamed(context, '/home');
+        Navigator.pushReplacementNamed(context, '/home');
       else
-        Navigator.pushNamed(context, '/home_dentista');
+        Navigator.pushReplacementNamed(context, '/home_dentista');
     }
   }
 
@@ -283,7 +283,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: GestureDetector(
                         onTap: () async {
                           await model.signInWithGoogle().whenComplete((){
-                            Navigator.pushNamed(context, '/home');
+                            Navigator.pushReplacementNamed(context, '/home');
                           });
 //                          final service = FirebaseService();
 //                          service.loginGoogle().whenComplete(() {

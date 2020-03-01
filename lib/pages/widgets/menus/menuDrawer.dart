@@ -251,6 +251,7 @@ class _menuDrawerState extends State<menuDrawer> {
                     onTap: () {
                       model.signOut();
                       Navigator.pushReplacementNamed(context, '/login');
+                      model.signOutGoogle();
                     },
                     leading: Icon(Icons.input),
                     title: Text(
@@ -258,7 +259,7 @@ class _menuDrawerState extends State<menuDrawer> {
                       style: TextStyle(
                         fontFamily: 'Roboto',
                         fontSize: 12,
-                        color: menuSelecionado == "Configs"
+                        color: menuSelecionado == "Logout"
                             ? Color(0XFF191919)
                             : Colors.black45,
                       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:odontoplusapp/models/user_model.dart';
 import 'package:odontoplusapp/pages/widgets/buttons/buttonMenuInicialOne.dart';
+import 'package:odontoplusapp/pages/widgets/congratulations/bemvindoOne.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class menuInicial extends StatefulWidget {
@@ -24,27 +25,10 @@ class _menuInicialState extends State<menuInicial> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  'Seja bem vindo, ${!model.isLoggedIn() ? "Desconhecido" : model.userData["nome"] == null ? "" : model.userData["nome"]}',
-                  style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: Colors.white),
-                ),
-                Text(
-                  'Nosso app foi preparado pensando',
-                  style: TextStyle(
-                      fontFamily: 'Roboto', fontSize: 14, color: Colors.white),
-                ),
-                Text(
-                  'em você',
-                  style: TextStyle(
-                      fontFamily: 'Roboto', fontSize: 14, color: Colors.white),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
+                bemvindoOne(),
+                SizedBox(height: 10,),
+                Divider(),
+                SizedBox(height: 10,),
                 //Linha 1
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -162,7 +146,7 @@ class _menuInicialState extends State<menuInicial> {
                     ),
                   ],
                 ),SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
               ],
             ),
